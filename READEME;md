@@ -1,0 +1,10 @@
+# Grove DHT22
+
+Extension MakeCode micro:bit pour lire un capteur Grove DHT22 (Temperature & Humidity Sensor Pro).
+
+## Blocs
+- Lire température (°C) / humidité (%RH) sur broche
+- Lire température / humidité sur port BitMaker V2 (liste déroulante)
+
+## Notes
+- Le DHT22 ne doit pas être lu plus souvent que toutes les ~2 secondes (cache intégré).
