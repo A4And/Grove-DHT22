@@ -1,0 +1,13 @@
+{
+  "name": "grove-dht22",
+  "version": "0.0.1",
+  "description": "Grove DHT22 (Temperature & Humidity Sensor Pro) for micro:bit - BitMaker V2 port dropdown",
+  "dependencies": {
+    "core": "*"
+  },
+  "files": [
+    "main.ts",
+    "README.md"
+  ],
+  "public": false
+}
