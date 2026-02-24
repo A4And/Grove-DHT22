@@ -124,3 +124,54 @@ namespace groveDHT22 {
         ensureFresh(pin)
     }
 }
+    /**
+     * Sélection explicite de la broche DATA sur les ports Grove "doubles" du BitMaker V2.
+     * Le DHT22 n’utilise qu’1 fil DATA, donc il faut choisir la bonne broche.
+     */
+    export enum BitMakerPortData {
+        //% block="P0 / P1 (DATA = P0)"
+        P0P1_DataP0 = 0,
+        //% block="P0 / P1 (DATA = P1)"
+        P0P1_DataP1 = 1,
+
+        //% block="P1 / P2 (DATA = P1)"
+        P1P2_DataP1 = 2,
+        //% block="P1 / P2 (DATA = P2)"
+        P1P2_DataP2 = 3,
+
+        //% block="P2 / P12 (DATA = P2)"
+        P2P12_DataP2 = 4,
+        //% block="P2 / P12 (DATA = P12)"
+        P2P12_DataP12 = 5,
+
+        //% block="P8 / P14 (DATA = P8)"
+        P8P14_DataP8 = 6,
+        //% block="P8 / P14 (DATA = P14)"
+        P8P14_DataP14 = 7,
+
+        //% block="P15 / P16 (DATA = P15)"
+        P15P16_DataP15 = 8,
+        //% block="P15 / P16 (DATA = P16)"
+        P15P16_DataP16 = 9
+    }
+
+    function portDataToPin(sel: BitMakerPortData): DigitalPin {
+        switch (sel) {
+            case BitMakerPortData.P0P1_DataP0: return DigitalPin.P0
+            case BitMakerPortData.P0P1_DataP1: return DigitalPin.P1
+
+            case BitMakerPortData.P1P2_DataP1: return DigitalPin.P1
+            case BitMakerPortData.P1P2_DataP2: return DigitalPin.P2
+
+            case BitMakerPortData.P2P12_DataP2: return DigitalPin.P2
+            case BitMakerPortData.P2P12_DataP12: return DigitalPin.P12
+
+            case BitMakerPortData.P8P14_DataP8: return DigitalPin.P8
+            case BitMakerPortData.P8P14_DataP14: return DigitalPin.P14
+
+            case BitMakerPortData.P15P16_DataP15: return DigitalPin.P15
+            case BitMakerPortData.P15P16_DataP16: return DigitalPin.P16
+
+            default: return DigitalPin.P0
+        }
+    }
